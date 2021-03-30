@@ -14,9 +14,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 app.post('/login', login.handleLogin);
-app.get('/items', tasks.getItems);
-app.post('/items', tasks.updateItem)
 app.get('/users', users.getUsers);
+app.get('/items', tasks.getItems);
+app.put('/items', tasks.updateItem);
+app.post('/items', tasks.addItem);
+app.delete('/items', tasks.deleteItem);
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
